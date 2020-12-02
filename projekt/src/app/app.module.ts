@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProjectComponent } from './project/project.component';
 import { TaskComponent } from './task/task.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 @NgModule({
-  declarations: [AppComponent, ProjectComponent, TaskComponent],
+  declarations: [AppComponent, ProjectComponent, TaskComponent, ProgressbarComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
