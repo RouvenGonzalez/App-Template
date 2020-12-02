@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../services/backend.service';
 
 @Component({
   selector: 'app-task',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task.component.css'],
 })
 export class TaskComponent implements OnInit {
-  constructor() {}
+  constructor(public backendService: BackendService) {}
 
   ngOnInit(): void {}
+
+  getTasks() {
+    return this.backendService.getTasks();
+  }
 }
