@@ -11,5 +11,6 @@
     "source.fixAll.eslint": true
   },
   "eslint.alwaysShowStatus": true,
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "browser-preview.startUrl": "http://localhost:4200"
 }
