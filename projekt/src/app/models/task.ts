@@ -1,6 +1,11 @@
-export interface Task {
+export class Task {
   description: string;
   status: Status;
+
+  constructor(description: string) {
+    this.description = description;
+    this.status = 0;
+  }
 }
 
 enum Status {
