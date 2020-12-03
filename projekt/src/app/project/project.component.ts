@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from '../models/project';
 import { BackendService } from '../services/backend.service';
 
 @Component({
@@ -11,7 +12,11 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getProjekt() {
+  getProjekt(): Project[] {
     return this.backendService.getProjects();
+  }
+
+  addProject(project: Project): void {
+    this.backendService.addProject(project);
   }
 }

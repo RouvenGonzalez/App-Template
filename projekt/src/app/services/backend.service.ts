@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Task } from '../models/task';
+import { Project } from '../models/project';
 
 @Injectable({
   providedIn: 'root',
@@ -6,17 +8,22 @@ import { Injectable } from '@angular/core';
 export class BackendService {
   constructor() {}
 
-  getTasks(): any[] {
+  getTasks(): Task[] {
     return [
-      { name: 'name 1', description: 'd1 ' },
-      { name: 'name 2', description: 'd2 ' },
+      { description: 'First Task ', status: 0 },
+      { description: 'Second Task ', status: 0 },
     ];
   }
 
-  getProjects(): any[] {
-    return [
-      { name: 'project 1', description: 'd1 ' },
-      { name: 'project 2', description: 'd2 ' },
-    ];
+  getProjects(): Project[] {
+    return this.projects;
   }
+
+  addProject(newProject: Project): void {
+    this.projects.push(newProject);
+  }
+  projects: Project[] = [
+    { name: 'project 1', tasks: [] },
+    { name: 'project 2', tasks: [] },
+  ];
 }
