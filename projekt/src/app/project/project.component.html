@@ -1,5 +1,12 @@
-<div *ngFor="let project of getProject()"> 
-{{project.name}}
-<app-progressbar></app-progressbar>
-<app-task></app-task>
+<div>
+    <div *ngFor="let project of getProject()"> 
+        <h4>{{project.name}}</h4>
+        <app-progressbar></app-progressbar>
+        <app-task></app-task>
+    </div>
+    <form #newProject = "ngForm" (ngSubmit) = "addProject(newProject.value)">
+        <input type = "text" name = "Project name" placeholder = "create new Project" ngModel>
+      <br>
+        <input type="submit" value="submit">
+      </form>
 </div>
