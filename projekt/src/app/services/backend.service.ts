@@ -19,18 +19,23 @@ export class BackendService {
     { description: 'Second Task ', status: 0 },
   ];
 
+  // provide task list for view
   getTasks(): Task[] {
     return this.tasks;
   }
+
+  // create new task object
   addTask(newTask: string): void {
     const task = new Task(newTask);
     this.tasks.push(task);
   }
 
+  // provide project list for view
   getProjects(): Project[] {
     return this.projects;
   }
 
+  // create new project object
   addProject(newProject: string): void {
     const project = new Project(newProject);
     this.projects.push(project);
