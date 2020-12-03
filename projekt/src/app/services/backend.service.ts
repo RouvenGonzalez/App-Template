@@ -22,15 +22,17 @@ export class BackendService {
   getTasks(): Task[] {
     return this.tasks;
   }
-  addTask(newTask: Task): void {
-    this.tasks.push(newTask);
+  addTask(newTask: string): void {
+    const task = new Task(newTask);
+    this.tasks.push(task);
   }
 
   getProjects(): Project[] {
     return this.projects;
   }
 
-  addProject(newProject: Project): void {
-    this.projects.push(newProject);
+  addProject(newProject: string): void {
+    const project = new Project(newProject);
+    this.projects.push(project);
   }
 }
