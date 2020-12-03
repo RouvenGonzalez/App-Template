@@ -12,7 +12,7 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getProjekt(): Project[] {
+  getProject(): Project[] {
     return this.backendService.getProjects();
   }
 
