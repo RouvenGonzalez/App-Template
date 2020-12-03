@@ -12,10 +12,12 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // get projects from backend.service
   getProject(): Project[] {
     return this.backendService.getProjects();
   }
 
+  // send data for a new project to backend.service
   addProject(project: Project): void {
     this.backendService.addProject(project);
   }
