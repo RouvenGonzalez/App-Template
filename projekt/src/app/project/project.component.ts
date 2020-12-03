@@ -18,7 +18,7 @@ export class ProjectComponent implements OnInit {
   }
 
   // send data for a new project to backend.service
-  addProject(project: Project): void {
+  addProject(project: string): void {
     this.backendService.addProject(project);
   }
 }
