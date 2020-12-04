@@ -14,11 +14,12 @@ export class ProjectComponent implements OnInit {
 
   // get projects from backend.service
   getProject(): Project[] {
-    return this.backendService.getProjects();
+    const projects = this.backendService.getProjects();
+    return projects;
   }
 
   // send data for a new project to backend.service
-  addProject(project: string): void {
-    this.backendService.addProject(project);
+  addProject(project: Project): void {
+    this.backendService.addProject(project.name);
   }
 }

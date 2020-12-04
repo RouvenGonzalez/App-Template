@@ -37,7 +37,7 @@ export class BackendService {
 
   // create new project object
   addProject(newProject: string): void {
-    const project = new Project(newProject);
-    this.projects.push(project);
+    const addedproject = new Project(newProject);
+    this.projects.push(addedproject);
   }
 }
