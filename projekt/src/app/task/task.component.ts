@@ -17,7 +17,7 @@ export class TaskComponent implements OnInit {
     return this.backendService.getTasks();
   }
   // send data for a new task to backend.service
-  addTask(task: string): void {
-    this.backendService.addTask(task);
+  addTask(task: Task): void {
+    this.backendService.addTask(task.description);
   }
 }

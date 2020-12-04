@@ -3,7 +3,7 @@
   {{task.description}}{{task.status}}
   </div>
   <form #newTask = "ngForm" (ngSubmit) = "addTask(newTask.value)">
-    <input type = "text" name = "Task description" placeholder = "create new task" ngModel>
+    <input type = "text" name = "description" placeholder = "create new task" ngModel>
   <br>
 
     <input type="submit" value="submit">
