@@ -10,13 +10,25 @@ export class BackendService {
 
   // array of projects for view
   projects: Project[] = [
-    { name: 'project 1', tasks: [] },
-    { name: 'project 2', tasks: [] },
+    {
+      name: 'Project 1',
+      tasks: [
+        { description: 'First Task for Project 1', status: 0 },
+        { description: 'Second Task for Project 1', status: 0 },
+      ],
+    },
+    {
+      name: 'Project 2',
+      tasks: [
+        { description: 'First Task for Project 2', status: 0 },
+        { description: 'Second Task for Project 2', status: 0 },
+      ],
+    },
   ];
-  // array of tasks for view
+  // **Prototype** array of tasks for view
   tasks: Task[] = [
-    { description: 'First Task ', status: 0 },
-    { description: 'Second Task ', status: 0 },
+    { description: 'First Task', status: 0 },
+    { description: 'Second Task', status: 0 },
   ];
 
   // provide task list for view
