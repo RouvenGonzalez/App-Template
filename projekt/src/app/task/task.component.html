@@ -1,8 +1,8 @@
 <div>
-  <div *ngFor="let task of getTasks()">
+  <div *ngFor="let task of getTasks(currentProject)">
   {{task.description}}{{task.status}}
   </div>
-  <form #newTask = "ngForm" (ngSubmit) = "addTask(newTask.value)">
+  <form #newTask = "ngForm" (ngSubmit) = "addTask(newTask.value, currentProject)">
     <input type = "text" name = "description" placeholder = "create new task" ngModel>
   <br>
 

@@ -2,7 +2,7 @@
     <div *ngFor="let project of getProject()"> 
         <h4>{{project.name}}</h4>
         <app-progressbar></app-progressbar>
-        <app-task></app-task>
+        <app-task [currentProject]="project"></app-task>
     </div>
     <form #newProject = "ngForm" (ngSubmit) = "addProject(newProject.value)">
         <input type = "text" name = "name" placeholder = "create new Project" ngModel>
