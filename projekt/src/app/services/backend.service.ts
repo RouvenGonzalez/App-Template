@@ -25,21 +25,16 @@ export class BackendService {
       ],
     },
   ];
-  // **Prototype** array of tasks for view
-  tasks: Task[] = [
-    { description: 'First Task', status: 0 },
-    { description: 'Second Task', status: 0 },
-  ];
 
   // provide task list for view
-  getTasks(): Task[] {
-    return this.tasks;
+  getTasks(project: Project): Task[] {
+    return project.tasks;
   }
 
   // create new task object
-  addTask(newTask: string): void {
+  addTask(newTask: string, project: Project): void {
     const task = new Task(newTask);
-    this.tasks.push(task);
+    project.tasks.push(task);
   }
 
   // provide project list for view
