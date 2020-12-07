@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from '../models/project';
 import { BackendService } from '../services/backend.service';
 
 @Component({
@@ -11,7 +12,14 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getProjekt() {
-    return this.backendService.getProjects();
+  // get projects from backend.service
+  getProject(): Project[] {
+    const projects = this.backendService.getProjects();
+    return projects;
+  }
+
+  // send data for a new project to backend.service
+  addProject(project: Project): void {
+    this.backendService.addProject(project.name);
   }
 }

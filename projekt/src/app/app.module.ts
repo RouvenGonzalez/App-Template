@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { ProjectComponent } from './project/project.component';
 import { TaskComponent } from './task/task.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, ProjectComponent, TaskComponent, ProgressbarComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

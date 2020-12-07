@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from '../models/task';
 import { BackendService } from '../services/backend.service';
 
 @Component({
@@ -11,7 +12,12 @@ export class TaskComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getTasks() {
+  // get task from backend.service
+  getTasks(): Task[] {
     return this.backendService.getTasks();
+  }
+  // send data for a new task to backend.service
+  addTask(task: Task): void {
+    this.backendService.addTask(task.description);
   }
 }

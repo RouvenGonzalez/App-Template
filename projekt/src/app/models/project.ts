@@ -1,5 +1,11 @@
-export interface Project {
+import { Task } from '../models/task';
+
+export class Project {
   name: string;
-  description: string;
   tasks: Task[];
+
+  constructor(name: string) {
+    this.name = name;
+    this.tasks = [];
+  }
 }

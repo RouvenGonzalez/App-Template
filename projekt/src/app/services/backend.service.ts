@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Task } from '../models/task';
+import { Project } from '../models/project';
 
 @Injectable({
   providedIn: 'root',
@@ -6,17 +8,48 @@ import { Injectable } from '@angular/core';
 export class BackendService {
   constructor() {}
 
-  getTasks(): any[] {
-    return [
-      { name: 'name 1', description: 'd1 ' },
-      { name: 'name 2', description: 'd2 ' },
-    ];
+  // array of projects for view
+  projects: Project[] = [
+    {
+      name: 'Project 1',
+      tasks: [
+        { description: 'First Task for Project 1', status: 0 },
+        { description: 'Second Task for Project 1', status: 0 },
+      ],
+    },
+    {
+      name: 'Project 2',
+      tasks: [
+        { description: 'First Task for Project 2', status: 0 },
+        { description: 'Second Task for Project 2', status: 0 },
+      ],
+    },
+  ];
+  // **Prototype** array of tasks for view
+  tasks: Task[] = [
+    { description: 'First Task', status: 0 },
+    { description: 'Second Task', status: 0 },
+  ];
+
+  // provide task list for view
+  getTasks(): Task[] {
+    return this.tasks;
   }
 
-  getProjects(): any[] {
-    return [
-      { name: 'project 1', description: 'd1 ' },
-      { name: 'project 2', description: 'd2 ' },
-    ];
+  // create new task object
+  addTask(newTask: string): void {
+    const task = new Task(newTask);
+    this.tasks.push(task);
+  }
+
+  // provide project list for view
+  getProjects(): Project[] {
+    return this.projects;
+  }
+
+  // create new project object
+  addProject(newProject: string): void {
+    const addedproject = new Project(newProject);
+    this.projects.push(addedproject);
   }
 }
