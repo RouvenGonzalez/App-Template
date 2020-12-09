@@ -23,4 +23,7 @@ export class TaskComponent implements OnInit {
   addTask(task: Task, currentProject: Project): void {
     this.backendService.addTask(task.description, currentProject);
   }
+  changeStatus(status: number, task: Task): void {
+    this.backendService.changeStatus(status, task);
+  }
 }

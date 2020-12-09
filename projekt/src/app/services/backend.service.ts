@@ -47,4 +47,7 @@ export class BackendService {
     const addedproject = new Project(newProject);
     this.projects.push(addedproject);
   }
+  changeStatus(status: number, task: Task): void {
+    task.status = status;
+  }
 }
