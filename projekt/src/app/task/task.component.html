@@ -1,7 +1,7 @@
 <div>
   <div *ngFor="let task of getTasks(currentProject)">
   {{task.description}}<mat-form-field appearance = "fill">
-    <mat-select #matSelect value = "{{task.status}}" (selectionChange)="changeStatus(matSelect.value, task)">
+    <mat-select #Select value = "{{task.status}}" (selectionChange)="changeStatus(Select.value, task)">
       <mat-label>Task status</mat-label>
       <mat-option value = 0>open</mat-option>
       <mat-option value = 1>review</mat-option>

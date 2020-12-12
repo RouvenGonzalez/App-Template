@@ -4,3 +4,4 @@
 - **use the projekt folder for the angular application**
 - **use the androidApp folder for the cordova project**
 
+import { BackendService } from '../services/backend.service';

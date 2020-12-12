@@ -10,6 +10,6 @@ export class Task {
 
 enum Status {
   open = 0,
-  review = 1,
-  finished = 2,
+  review = 0.5,
+  finished = 1,
 }
