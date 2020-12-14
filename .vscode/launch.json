@@ -39,7 +39,6 @@
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
-      "port": 9229
     },
     {
       "name": "Debug Jest Tests Current File",
