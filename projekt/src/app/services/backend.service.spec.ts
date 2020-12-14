@@ -6,7 +6,6 @@ import { APP_BASE_HREF } from '@angular/common';
 
 describe('BackendService', () => {
   let service: BackendService;
-  let app: AppModule;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
