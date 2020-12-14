@@ -25,7 +25,7 @@ export class ProgressbarComponent implements OnInit {
     // - 1 open , 1 review , 1 finished = 50% : (0+0.5+1)/3= 0.5
 
     // formel: (status1+status2+...statusN)/n
-    // status : open = 0 , review = 0.1 , finished = 1
+    // status : open = 0 , review = 0.5 , finished = 1
 
     //get tasks of this project
     const tasks = this.backendService.getTasks(currentProject);
