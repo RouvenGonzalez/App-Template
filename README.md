@@ -1,7 +1,5 @@
 # App-Template
-## My Project for the practical exam
+## My Project for the Practical Exam
 
 - **use the projekt folder for the angular application**
 - **use the androidApp folder for the cordova project**
-
-import { BackendService } from '../services/backend.service';
