@@ -31,8 +31,10 @@ export class BackendService {
 
   // create new task object
   addTask(newTask: string, project: Project): void {
-    const task = new Task(newTask);
-    project.tasks.push(task);
+    if (newTask.length > 0) {
+      const task = new Task(newTask);
+      project.tasks.push(task);
+    }
   }
 
   // provide project list for view
@@ -42,8 +44,10 @@ export class BackendService {
 
   // create new project object
   addProject(newProject: string): void {
-    const addedproject = new Project(newProject);
-    this.projects.push(addedproject);
+    if (newProject.length > 0) {
+      const addedproject = new Project(newProject);
+      this.projects.push(addedproject);
+    }
   }
   changeStatus(status: number, task: Task): void {
     task.status = status;
