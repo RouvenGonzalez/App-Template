@@ -6,8 +6,6 @@ import { Project } from '../models/project';
   providedIn: 'root',
 })
 export class BackendService {
-  constructor() {}
-
   // array of projects for view
   projects: Project[] = [
     {
