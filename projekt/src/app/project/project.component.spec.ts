@@ -15,10 +15,6 @@ describe('ProjectComponent', () => {
     component = TestBed.inject(ProjectComponent);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('test getProject: should provide project data from backend ', () => {
     expect(component.getProject()).toEqual(component.backendService.projects);
   });

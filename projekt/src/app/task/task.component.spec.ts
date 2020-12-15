@@ -22,10 +22,6 @@ describe('TaskComponent', () => {
     component = TestBed.inject(TaskComponent);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('test getTasks: should provide task data from backend.service', () => {
     expect(component.getTasks(testProject)).toEqual(testProject.tasks);
   });

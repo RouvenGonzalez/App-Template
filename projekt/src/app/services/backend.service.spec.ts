@@ -15,9 +15,6 @@ describe('BackendService', () => {
     service = TestBed.inject(BackendService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
   it('test getTasks: should provide data from backend', () => {
     expect(service.getTasks(service.projects[0])).toEqual(service.projects[0].tasks);
   });
@@ -44,7 +41,7 @@ describe('BackendService', () => {
     expect(service.projects.length).toEqual(2);
   });
 
-  it('test changeStatus: sholud change the status of a task', () => {
+  it('test changeStatus: should change the status of a task', () => {
     service.changeStatus(1, service.projects[0].tasks[0]);
     expect(service.projects[0].tasks[0].status).toEqual(1);
   });

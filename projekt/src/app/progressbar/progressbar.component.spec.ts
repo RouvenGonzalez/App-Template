@@ -21,9 +21,6 @@ describe('ProgressbarComponent', () => {
     });
     component = TestBed.inject(ProgressbarComponent);
   });
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 
   it('test getProgressOfTasks: should calculate finished percentage of a project', () => {
     expect(component.getProgressOfTasks(testProject)).toEqual(50);
