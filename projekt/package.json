@@ -10,6 +10,60 @@
     "lint": "eslint .",
     "fix": "eslint . --fix"
   },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setup-jest.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.spec.json"
+      }
+    },
+    "testMatch": [
+      "**/?(*.)+(spec).[tj]s?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "e2e",
+      "src/test",
+      "build-tmp",
+      "lib"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "suiteName": "Jest Tests",
+          "outputDirectory": "./packages",
+          "outputName": "junit.xml",
+          "uniqueOutputName": false,
+          "classNameTemplate": "{classname}-{title}",
+          "titleTemplate": "{classname}-{title}",
+          "ancestorSeparator": " › ",
+          "usePathForSuiteName": true
+        }
+      ]
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "packages",
+    "coverageProvider": "babel",
+    "coverageReporters": [
+      "cobertura"
+    ],
+    "coveragePathIgnorePatterns": [
+      "build-tmp",
+      "scripts",
+      "e2e",
+      "src/test",
+      "node_modules",
+      ".module.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ]
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.2",
