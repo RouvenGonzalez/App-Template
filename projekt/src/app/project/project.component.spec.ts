@@ -20,7 +20,7 @@ describe('ProjectComponent', () => {
   });
 
   it('test addProject: should send new project data to backend.service', () => {
-    component.addProject({ name: 'test name', tasks: [] });
+    component.addProject('test name');
     expect(component.backendService.projects.length).toEqual(3);
   });
 });

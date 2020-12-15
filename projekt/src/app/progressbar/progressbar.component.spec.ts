@@ -2,7 +2,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppModule } from '../app.module';
 import { Project } from '../models/project';
-import { Task } from '../models/task';
+import { Task, Status } from '../models/task';
 
 import { ProgressbarComponent } from './progressbar.component';
 
@@ -12,7 +12,7 @@ describe('ProgressbarComponent', () => {
   // testdata for the tests
   const testProject = new Project('test Project');
   testProject.tasks = [new Task('test task 1'), new Task('test task 2')];
-  testProject.tasks[0].status = 1;
+  testProject.tasks[0].status = Status.finished;
 
   beforeEach(() => {
     TestBed.configureTestingModule({

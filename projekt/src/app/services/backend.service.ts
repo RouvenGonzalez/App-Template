@@ -28,13 +28,15 @@ export class BackendService {
   getTasks(project: Project): Task[] {
     return project.tasks;
   }
-
+  // TODO: change create task to search the neccessary project to ad the task via name
   // create new task object
-  addTask(newTask: string, project: Project): void {
+  createTask(newTask: string, project: Project): Task {
+    let task: Task;
     if (newTask.length > 0) {
-      const task = new Task(newTask);
+      task = new Task(newTask);
       project.tasks.push(task);
     }
+    return task;
   }
 
   // provide project list for view
@@ -43,12 +45,15 @@ export class BackendService {
   }
 
   // create new project object
-  addProject(newProject: string): void {
-    if (newProject.length > 0) {
-      const addedproject = new Project(newProject);
+  createProject(newProject: string): Project {
+    let addedproject: Project;
+    if (newProject) {
+      addedproject = new Project(newProject);
       this.projects.push(addedproject);
     }
+    return addedproject;
   }
+
   changeStatus(status: number, task: Task): void {
     task.status = status;
   }

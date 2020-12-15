@@ -13,13 +13,13 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {}
 
   // get projects from backend.service
-  getProject(): Project[] {
+  viewProjects(): Project[] {
     const projects = this.backendService.getProjects();
     return projects;
   }
 
   // send data for a new project to backend.service
-  addProject(project: Project): void {
-    this.backendService.addProject(project.name);
+  addProject(project: string): void {
+    this.backendService.createProject(project);
   }
 }
