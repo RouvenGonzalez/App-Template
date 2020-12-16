@@ -33,6 +33,8 @@ describe('TaskComponent', () => {
     const spy = jest.spyOn(component.backendService, 'createTask');
     const length = component.backendService.projects[0].tasks.length;
     component.addTask('test task', component.backendService.projects[0].name);
+
+    //test
     expect(component.backendService.projects[0].tasks.length).toEqual(length + 1);
     expect(spy).toHaveBeenCalled;
   });
@@ -47,8 +49,21 @@ describe('TaskComponent', () => {
     const spy = jest.spyOn(component.backendService, 'createTask');
     const length = component.backendService.projects[0].tasks.length;
     component.addTask('', component.backendService.projects[0].name);
+
+    //test
     expect(component.backendService.projects[0].tasks.length).toEqual(length);
     expect(spy).toHaveBeenCalled;
+  });
+
+  it('test addTask: should apply choosen task name correctly', () => {
+    component.addTask('test task name', component.backendService.projects[0].name);
+
+    // find created task for the test
+    const tasks = component.backendService.getTasks(component.backendService.projects[0].name);
+    const createdTask = tasks.find((task) => task.description == 'test task name');
+
+    //test
+    expect(createdTask.description).toEqual('test task name');
   });
 
   it('test changeStatus: should send information to change status to backend.service', () => {
@@ -68,5 +83,14 @@ describe('TaskComponent', () => {
       component.backendService.projects[0].name
     );
     expect(spy).toHaveBeenCalled;
+  });
+
+  it('test changeStatus: should call apply the status change correctly', () => {
+    component.changeStatus(
+      Status.FINISHED,
+      component.backendService.projects[0].tasks[1].description,
+      component.backendService.projects[0].name
+    );
+    expect(component.backendService.projects[0].tasks[1].status).toEqual(Status.FINISHED);
   });
 });
