@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { BackendService } from './backend.service';
 import { AppModule } from '../app.module';
 import { APP_BASE_HREF } from '@angular/common';
+import { Status } from '../models/task';
 
 describe('BackendService', () => {
   let service: BackendService;
@@ -16,15 +17,15 @@ describe('BackendService', () => {
   });
 
   it('test getTasks: should provide data from backend', () => {
-    expect(service.getTasks(service.projects[0])).toEqual(service.projects[0].tasks);
+    expect(service.getTasks(service.projects[0].name)).toEqual(service.projects[0].tasks);
   });
   it('test createTask: should create a new index to the tasks array ', () => {
-    service.createTask('Test task name', service.projects[0]);
+    service.createTask('Test task name', service.projects[0].name);
     expect(service.projects[0].tasks.length).toEqual(3);
   });
 
   it('test createTask: should not create a new task if no name is entered', () => {
-    service.createTask('', service.projects[0]);
+    service.createTask('', service.projects[0].name);
     expect(service.projects[0].tasks.length).toEqual(2);
   });
 
@@ -44,8 +45,8 @@ describe('BackendService', () => {
     expect(service.projects.length).toEqual(2);
   });
 
-  it('test changeStatus: should change the status of a task', () => {
-    service.changeStatus(1, service.projects[0].tasks[0]);
-    expect(service.projects[0].tasks[0].status).toEqual(1);
+  it('test updateStatus: should change the status of a task', () => {
+    service.updateStatus(Status.FINISHED, service.projects[0].tasks[0].description, service.projects[0].name);
+    expect(service.projects[0].tasks[0].status).toEqual(Status.FINISHED);
   });
 });

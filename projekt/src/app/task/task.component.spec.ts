@@ -2,17 +2,12 @@ import { APP_BASE_HREF } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppModule } from '../app.module';
 import { Project } from '../models/project';
-import { Task } from '../models/task';
+import { Status, Task } from '../models/task';
 
 import { TaskComponent } from './task.component';
 
 describe('TaskComponent', () => {
   let component: TaskComponent;
-
-  // testdata for the tests
-  const testProject = new Project('test Project');
-  testProject.tasks = [new Task('test task 1'), new Task('test task 2')];
-  testProject.tasks[0].status = 1;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -23,16 +18,22 @@ describe('TaskComponent', () => {
   });
 
   it('test getTasks: should provide task data from backend.service', () => {
-    expect(component.getTasks(testProject)).toEqual(testProject.tasks);
+    expect(component.viewTasks(component.backendService.projects[0].name)).toEqual(
+      component.backendService.projects[0].tasks
+    );
   });
 
   it('test addTask: should send task name to backend.service', () => {
-    component.addTask({ description: 'test task', status: 0 }, testProject);
-    expect(testProject.tasks.length).toEqual(3);
+    component.addTask('test task', component.backendService.projects[0].name);
+    expect(component.backendService.projects[0].tasks.length).toEqual(3);
   });
 
   it('test changeStatus: should send information to change status to backend.service', () => {
-    component.changeStatus(1, testProject.tasks[1]);
-    expect(testProject.tasks[1].status).toEqual(1);
+    component.changeStatus(
+      Status.FINISHED,
+      component.backendService.projects[0].tasks[1].description,
+      component.backendService.projects[0].name
+    );
+    expect(component.backendService.projects[0].tasks[1].status).toEqual(1);
   });
 });

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Project } from '../models/project';
-import { Task } from '../models/task';
+import { Status, Task } from '../models/task';
 import { BackendService } from '../services/backend.service';
 
 @Component({
@@ -11,19 +11,23 @@ import { BackendService } from '../services/backend.service';
 export class TaskComponent implements OnInit {
   constructor(public backendService: BackendService) {}
 
+  status = Status;
+
   ngOnInit(): void {}
 
   @Input() currentProject: Project;
 
   // get task from backend.service
-  getTasks(currentProject: Project): Task[] {
+  viewTasks(currentProject: string): Task[] {
     return this.backendService.getTasks(currentProject);
   }
   // send data for a new task to backend.service
-  addTask(task: Task, currentProject: Project): void {
-    this.backendService.createTask(task.description, currentProject);
+  addTask(taskName: string, projectName: string): void {
+    this.backendService.createTask(taskName, projectName);
   }
-  changeStatus(status: number, task: Task): void {
-    this.backendService.changeStatus(status, task);
+
+  // send data to change a task to the backend.service
+  changeStatus(status: Status, taskName: string, projectName: string): void {
+    this.backendService.updateStatus(status, taskName, projectName);
   }
 }

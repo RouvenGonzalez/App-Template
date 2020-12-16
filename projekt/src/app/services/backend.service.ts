@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../models/task';
+import { Status, Task } from '../models/task';
 import { Project } from '../models/project';
 
 @Injectable({
@@ -25,16 +25,22 @@ export class BackendService {
   ];
 
   // provide task list for view
-  getTasks(project: Project): Task[] {
-    return project.tasks;
+  getTasks(projectName: string): Task[] {
+    const index = this.projects.findIndex((project) => project.name == projectName);
+    return this.projects[index].tasks;
   }
-  // TODO: change create task to search the neccessary project to ad the task via name
+
   // create new task object
-  createTask(newTask: string, project: Project): Task {
+  createTask(newTask: string, projectName: string): Task {
     let task: Task;
-    if (newTask.length > 0) {
+    // check if task description is not empty or null or undefined
+    if (newTask) {
+      // find index of the corresponding opject in database
+      const index = this.projects.findIndex((project) => project.name == projectName);
+      // create the new task
       task = new Task(newTask);
-      project.tasks.push(task);
+      // push it into the tasks array of the searched object
+      this.projects[index].tasks.push(task);
     }
     return task;
   }
@@ -47,14 +53,22 @@ export class BackendService {
   // create new project object
   createProject(newProject: string): Project {
     let addedproject: Project;
+    // check if task description is not empty or null or undefined
     if (newProject) {
+      // create new project
       addedproject = new Project(newProject);
+      // add project to database
       this.projects.push(addedproject);
     }
     return addedproject;
   }
 
-  changeStatus(status: number, task: Task): void {
-    task.status = status;
+  updateStatus(status: Status, taskName: string, projectName: string): void {
+    // find Index of project
+    const pIndex = this.projects.findIndex((project) => project.name == projectName);
+    // find index of the task in the found project
+    const tIndex = this.projects[pIndex].tasks.findIndex((task) => task.description == taskName);
+    // change the found tasks status to the status that is given
+    this.projects[pIndex].tasks[tIndex].status = status;
   }
 }

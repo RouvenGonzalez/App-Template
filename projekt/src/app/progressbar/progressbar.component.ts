@@ -28,7 +28,7 @@ export class ProgressbarComponent implements OnInit {
     // status : open = 0 , review = 0.5 , finished = 1
 
     //get tasks of this project
-    const tasks = this.backendService.getTasks(currentProject);
+    const tasks = this.backendService.getTasks(currentProject.name);
     //get the value of all task.status
     const statusValues = tasks.map((task) => task.status);
     //get sum of the values

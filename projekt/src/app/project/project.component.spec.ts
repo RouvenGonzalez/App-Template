@@ -16,7 +16,7 @@ describe('ProjectComponent', () => {
   });
 
   it('test getProject: should provide project data from backend ', () => {
-    expect(component.getProject()).toEqual(component.backendService.projects);
+    expect(component.viewProjects()).toEqual(component.backendService.projects);
   });
 
   it('test addProject: should send new project data to backend.service', () => {

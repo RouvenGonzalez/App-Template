@@ -1,15 +1,15 @@
 <div>
-  <div *ngFor="let task of getTasks(currentProject)">
+  <div *ngFor="let task of viewTasks(currentProject.name)">
   {{task.description}}<mat-form-field appearance = "fill">
-    <mat-select #Select [value] = "task.status" (selectionChange)="changeStatus(Select.value, task)">
+    <mat-select #Select [value] = "task.status" (selectionChange)="changeStatus(Select.value, task.description, currentProject.name)">
       <mat-label>Task status</mat-label>
-      <mat-option [value] = "0">open</mat-option>
-      <mat-option [value] = "0.5">review</mat-option>
-      <mat-option [value] = "1">finished</mat-option>
+      <mat-option [value] = "status.OPEN">open</mat-option>
+      <mat-option [value] = "status.REVIEW">review</mat-option>
+      <mat-option [value] = "status.FINISHED">finished</mat-option>
     </mat-select>
   </mat-form-field>
   </div>
-  <form #newTask = "ngForm" (ngSubmit) = "addTask(newTask.value, currentProject)">
+  <form #newTask = "ngForm" (ngSubmit) = "addTask(newTask.value.description, currentProject.name)">
     <input type = "text" name = "description" placeholder = "create new task" ngModel>
   <br>
 

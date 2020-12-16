@@ -2,7 +2,7 @@
   <form #newProject = "ngForm" (ngSubmit) = "addProject(newProject.value.name)">
       <input type = "text" name = "name" placeholder = "create new Project" ngModel>
   
-      <input color = "accent" type="submit" value="submit">
+      <input color = "accent" type="submit"  value="submit">
     </form>
     <div *ngFor="let project of viewProjects()"> 
         <h4>{{project.name}}</h4>

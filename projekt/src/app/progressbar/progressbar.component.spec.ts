@@ -9,11 +9,6 @@ import { ProgressbarComponent } from './progressbar.component';
 describe('ProgressbarComponent', () => {
   let component: ProgressbarComponent;
 
-  // testdata for the tests
-  const testProject = new Project('test Project');
-  testProject.tasks = [new Task('test task 1'), new Task('test task 2')];
-  testProject.tasks[0].status = Status.finished;
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [AppModule],
@@ -23,6 +18,6 @@ describe('ProgressbarComponent', () => {
   });
 
   it('test getProgressOfTasks: should calculate finished percentage of a project', () => {
-    expect(component.getProgressOfTasks(testProject)).toEqual(50);
+    expect(component.getProgressOfTasks(component.backendService.projects[0])).toEqual(0);
   });
 });
