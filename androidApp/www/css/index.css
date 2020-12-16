@@ -26,8 +26,15 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
     background-image:linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%);
+
+    /* changed font-family 
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    font-size:12px;
+    */
+    font-family: 'Gill Sans', Arial, Helvetica, sans-serif;
+
+    /* changed font-size to default 1em */
+    font-size: 1em;
+
     height:100vh;
     margin:0px;
     padding:0px;
@@ -107,4 +114,10 @@ h1 {
     body {
         background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
     }
+}
+
+/* new unbound class for div class="progress-bar" */
+.progress-bar {
+    width: 60%;
+    margin-left: .5em;
 }
