@@ -27,13 +27,8 @@ body {
     background-color:#E4E4E4;
     background-image:linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%);
 
-    /* changed font-family 
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    */
-    font-family: 'Gill Sans', Arial, Helvetica, sans-serif;
-
-    /* changed font-size to default 1em */
-    font-size: 1em;
+    font-size: 24px;
 
     height:100vh;
     margin:0px;
@@ -116,8 +111,4 @@ h1 {
     }
 }
 
-/* new unbound class for div class="progress-bar" */
-.progress-bar {
-    width: 60%;
-    margin-left: .5em;
-}
+

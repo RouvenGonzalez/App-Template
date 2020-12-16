@@ -1,4 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html {    
+    font-family: 'Gill Sans', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    width: 100%;
+}
+
+.progress-bar {
+    width: 50%;
+    margin-left: 1em;
+    margin-bottom: .25em;
+}
+
+.float-right {
+    float: right;
+    margin: 0 auto 0 auto;
+
+}
+
+.clear-wrap {
+    clear: both;
+}
+
+.container {
+    width: 50%;
+}
+
+p {
+    padding-top: 1.15em;
+    margin-left: 1em;
+}
+
+.field-position {
+    margin-left: 1.15em;
+}
+
+h2.project-name {
+    text-align: center;
+    margin-left: 0 auto 0 auto;
+}
+
