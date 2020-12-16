@@ -63,13 +63,13 @@ export class BackendService {
     return addedproject;
   }
 
-  updateStatus(status: Status, taskName: string, projectName: string): void {
+  updateStatus(status: Status, taskName: string, projectName: string): Status {
     // find Index of project
     const pIndex = this.projects.findIndex((project) => project.name == projectName);
     // find index of the task in the found project
     const tIndex = this.projects[pIndex].tasks.findIndex((task) => task.description == taskName);
     // change the found tasks status to the status that is given
-    this.projects[pIndex].tasks[tIndex].status = status;
+    return (this.projects[pIndex].tasks[tIndex].status = status);
   }
 
   calculateProjectProgress(projectName: string): number {

@@ -18,6 +18,6 @@ describe('ProgressbarComponent', () => {
   });
 
   it('test getProgressOfTasks: should calculate finished percentage of a project', () => {
-    expect(component.getProgressOfTasks(component.backendService.projects[0])).toEqual(0);
+    expect(component.getProgressOfTasks(component.backendService.projects[0].name)).toEqual(0);
   });
 });
