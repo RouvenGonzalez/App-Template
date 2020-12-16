@@ -15,7 +15,7 @@ export class ProgressbarComponent implements OnInit {
   @Input() currentProject: Project;
 
   // get progress of tasks calculated in backend.service
-  getProgressOfTasks(projectName: string): number {
+  getProjectProgress(projectName: string): number {
     return this.backendService.calculateProjectProgress(projectName);
   }
 }
