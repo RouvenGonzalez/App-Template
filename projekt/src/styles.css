@@ -13,12 +13,6 @@ html {
         
 }
 
-.float-right {
-    float: right;
-    margin: 0 auto 0 auto;
-
-}
-
 .clear-wrap {
     clear: both;
 }
