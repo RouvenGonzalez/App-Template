@@ -85,7 +85,7 @@ describe('TaskComponent', () => {
     expect(spy).toHaveBeenCalled;
   });
 
-  it('test changeStatus: should call apply the status change correctly', () => {
+  it('test changeStatus: should apply the status change correctly', () => {
     component.changeStatus(
       Status.FINISHED,
       component.backendService.projects[0].tasks[1].description,
