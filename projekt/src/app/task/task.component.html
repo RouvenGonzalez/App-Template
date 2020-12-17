@@ -1,17 +1,21 @@
 <div>
-  <div *ngFor="let task of viewTasks(currentProject.name)">
-  {{task.description}}<mat-form-field appearance = "fill">
-    <mat-select #Select [value] = "task.status" (selectionChange)="changeStatus(Select.value, task.description, currentProject.name)">
-      <mat-label>Task status</mat-label>
-      <mat-option [value] = "status.OPEN">open</mat-option>
-      <mat-option [value] = "status.REVIEW">review</mat-option>
-      <mat-option [value] = "status.FINISHED">finished</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="container" *ngFor="let task of viewTasks(currentProject.name)">
+    <div class="float-right">
+      <mat-form-field appearance = "fill">
+        <mat-select #Select [value] = "task.status" (selectionChange)="changeStatus(Select.value, task.description, currentProject.name)">
+          <mat-label>Task status</mat-label>
+          <mat-option [value] = "status.OPEN">open</mat-option>
+          <mat-option [value] = "status.REVIEW">review</mat-option>
+          <mat-option [value] = "status.FINISHED">finished</mat-option>
+        </mat-select>    
+      </mat-form-field>
+    </div>
+    <p>{{task.description}}</p>
+  <div class="clear-wrap"></div>
   </div>
   <form #newTask = "ngForm" (ngSubmit) = "addTask(newTask.value.description, currentProject.name)">
-    <input type = "text" name = "description" placeholder = "create new task" ngModel>
-  <br>
+    <input class="field-position" type="text" name = "description" placeholder = "create new task" ngModel>
+  
 
     <input type="submit" value="submit">
   </form>
