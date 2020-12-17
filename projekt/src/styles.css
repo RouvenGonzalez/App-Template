@@ -10,6 +10,7 @@ html {
     width: 50%;
     margin-left: 1em;
     margin-bottom: .25em;
+        
 }
 
 .float-right {
@@ -40,3 +41,6 @@ h2.project-name {
     margin-left: 0 auto 0 auto;
 }
 
+.bar-height {
+    height: 20px !important;
+}
