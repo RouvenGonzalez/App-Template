@@ -13,6 +13,11 @@ html {
         
 }
 
+.float-right {
+    float: right;
+
+}
+
 .clear-wrap {
     clear: both;
 }
@@ -27,7 +32,8 @@ p {
 }
 
 .field-position {
-    margin-left: 1.15em;
+    margin-left: 1.15em !important;
+    
 }
 
 h2.project-name {
@@ -37,4 +43,16 @@ h2.project-name {
 
 .bar-height {
     height: 20px !important;
+}
+
+input[type="text"]{
+    width: 35%; 
+    background-color: rgba(255,255,255,.1);
+    margin-right: .5em;
+    
+}
+
+button[type="submit"]{
+    height: 1.5em;
+    line-height: 1.5em;
 }

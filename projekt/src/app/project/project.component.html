@@ -1,7 +1,7 @@
 <div>
   <form #newProject = "ngForm" (ngSubmit) = "addProject(newProject.value.name)">
-    <input type = "text" name = "name" placeholder = "create new Project" ngModel>
-    <input color = "accent" type="submit"  value="submit">
+    <input matInput type = "text" name = "name" placeholder = "new Project" ngModel>
+    <button mat-raised-button  color = "accent" type="submit" value="submit">add</button>
   </form>
   <div *ngFor="let project of viewProjects()"> 
     <div class="container">
