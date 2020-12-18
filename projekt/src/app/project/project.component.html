@@ -8,6 +8,13 @@
       <h2 class="project-name">{{project.name}}</h2>
     </div>
       <app-progressbar [currentProject]="project"></app-progressbar>
-      <app-task [currentProject]="project"></app-task>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+             <h3 class="taskTitle"> List of Tasks</h3>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+            <app-task [currentProject]="project"></app-task>
+      </mat-expansion-panel>
   </div>
 </div>

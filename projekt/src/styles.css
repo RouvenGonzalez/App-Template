@@ -7,8 +7,10 @@ html {
 }
 
 .progress-bar {
-    width: 90%;
-    margin: 0 auto 0 auto;
+    width: 95%;
+    margin: 0 auto .5em auto;
+    border-style: solid;
+    border-radius: .2em;
         
 }
 
@@ -48,10 +50,15 @@ input[type="text"]{
     width: 35%; 
     background-color: rgba(255,255,255,.1);
     margin-right: .5em;
+    color: blanchedalmond;
     
 }
 
 button[type="submit"]{
     height: 1.5em;
     line-height: 1.5em;
+}
+
+h3.taskTitle{
+    margin-left: .5em;
 }
