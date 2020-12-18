@@ -1,5 +1,5 @@
 <div>
-  <form #newProject = "ngForm" (ngSubmit) = "addProject(newProject.value.name)">
+  <form #newProject = "ngForm" (ngSubmit) = "addProject(newProject.value.name); newProject.reset()">
     <input matInput type = "text" name = "name" placeholder = "new Project" ngModel>
     <button mat-raised-button  color = "accent" type="submit" value="submit">add</button>
   </form>

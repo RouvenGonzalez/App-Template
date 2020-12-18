@@ -13,7 +13,7 @@
     <p>{{task.description}}</p>
   <div class="clear-wrap"></div>
   </div>
-  <form #newTask = "ngForm" (ngSubmit) = "addTask(newTask.value.description, currentProject.name)">
+  <form #newTask = "ngForm" (ngSubmit) = "addTask(newTask.value.description, currentProject.name); newTask.reset()">
     <input matInput class="field-position" type="text" name = "description" placeholder = "new Task" ngModel>
     <button mat-raised-button  color = "accent" type="submit" value="submit">add </button>
   </form>
