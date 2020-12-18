@@ -1,8 +1,8 @@
 <div>
   <div class="container" *ngFor="let task of viewTasks(currentProject.name)">
     <div class="float-right">
-      <mat-form-field appearance = "fill">
-        <mat-select #Select [value] = "task.status" (selectionChange)="changeStatus(Select.value, task.description, currentProject.name)">
+      <mat-form-field appearance = "fill" color="accent">
+        <mat-select #Select [value] = "task.status"  (selectionChange)="changeStatus(Select.value, task.description, currentProject.name)">
           <mat-label>Task status</mat-label>
           <mat-option [value] = "status.OPEN">open</mat-option>
           <mat-option [value] = "status.REVIEW">review</mat-option>

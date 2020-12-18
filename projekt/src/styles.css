@@ -11,6 +11,7 @@ html {
     margin: 0 auto .5em auto;
     border-style: solid;
     border-radius: .2em;
+    border-color: lightgrey)
         
 }
 
@@ -61,4 +62,8 @@ button[type="submit"]{
 
 h3.taskTitle{
     margin-left: .5em;
+}
+
+.mat-progress-bar-buffer {
+    background: lightgrey !important;
 }
